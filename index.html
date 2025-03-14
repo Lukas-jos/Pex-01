@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEX Saúde - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PEX Saúde</h1>
+        <div id="login-container">
+            <h2>Login</h2>
+            <input type="email" id="login-email" placeholder="Email">
+            <input type="password" id="login-password" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p>Não tem uma conta? <a href="#" onclick="toggleForm()">Criar conta</a></p>
+        </div>
+
+        <div id="register-container" style="display: none;">
+            <h2>Cadastro</h2>
+            <input type="text" id="register-username" placeholder="Nome de usuário">
+            <input type="email" id="register-email" placeholder="Email">
+            <input type="password" id="register-password" placeholder="Senha">
+            <button onclick="register()">Criar Conta</button>
+            <p>Já tem uma conta? <a href="#" onclick="toggleForm()">Entrar</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
