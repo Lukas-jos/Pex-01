@@ -1,7 +1,7 @@
-const API_URL = 'https://seu-backend.up.railway.app'; // Atualize com a URL do seu backend
-let audioAlarme = new Audio('alarme.mp3'); // Som do alarme
+const API_URL = 'mysql://root:CXkOKJGdpvPKgPoVCOmlichhHKZifFjt@mainline.proxy.rlwy.net:26776/railway'; 
+let audioAlarme = new Audio('alarme.mp3'); 
 
-// Função para registrar um usuário
+
 async function registrar() {
     const email = document.getElementById('emailRegistro').value;
     const senha = document.getElementById('senhaRegistro').value;
@@ -22,7 +22,7 @@ async function registrar() {
     }
 }
 
-// Função para login
+
 async function login() {
     const email = document.getElementById('emailLogin').value;
     const senha = document.getElementById('senhaLogin').value;
@@ -43,7 +43,7 @@ async function login() {
     }
 }
 
-// Função para carregar a Dashboard
+
 async function carregarDashboard() {
     const token = localStorage.getItem('token');
     const username = localStorage.getItem('username');
@@ -73,7 +73,7 @@ async function carregarDashboard() {
     verificarLembretes(lembretes);
 }
 
-// Função para adicionar um lembrete
+
 async function adicionarLembrete() {
     const token = localStorage.getItem('token');
     const nome = document.getElementById('nomeLembrete').value;
@@ -95,7 +95,7 @@ async function adicionarLembrete() {
     }
 }
 
-// Função para deletar um lembrete
+
 async function deletarLembrete(id) {
     const token = localStorage.getItem('token');
 
@@ -107,7 +107,7 @@ async function deletarLembrete(id) {
     carregarDashboard();
 }
 
-// Função para verificar lembretes e disparar notificações
+
 function verificarLembretes(lembretes) {
     setInterval(() => {
         const agora = new Date();
@@ -122,20 +122,20 @@ function verificarLembretes(lembretes) {
     }, 60000);
 }
 
-// Função para exibir notificações
+
 function exibirNotificacao(nome) {
     alert(`Está na hora de: ${nome}`);
     audioAlarme.play();
 }
 
-// Função para logout
+
 function logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
     window.location.href = 'login.html';
 }
 
-// Carregar a Dashboard ao abrir a página
+
 if (window.location.pathname.includes('dashboard.html')) {
     carregarDashboard();
 }
